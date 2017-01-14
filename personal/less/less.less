@@ -1,0 +1,58 @@
+ @import "var";
+ .radius(@r1:20%,@r2:50%,@r3:30%,@r4:50%){
+   -webkit-border-radius:@arguments;
+   -moz-border-radius:@arguments;
+   -o-border-radius:@arguments;
+   -ms-border-radius:@arguments;
+   border-radius:@arguments;
+ }
+ .shadow(@type) when(@type=0){
+   -webkit-box-shadow: 0 0 10px red;
+   -moz-box-shadow: 0 0 10px red;
+   -ms-box-shadow: 0 0 10px red;
+   -o-box-shadow: 0 0 10px red;
+   box-shadow: 0 0 10x red;
+ }
+ .shadow(@type) when(@type=1){
+   -webkit-box-shadow: 0 0 10px red inset;
+   -moz-box-shadow: 0 0 10px red inset;
+   -ms-box-shadow: 0 0 10px red inset;
+   -o-box-shadow: 0 0 10px red inset;
+   box-shadow: 0 0 10x red inset;
+ }
+ .loop (@i:1) when (@i<10){
+   .col-s-@{i}{
+     width:20px*@i;
+   }
+   .loop(@i+1);
+ }
+ .loop;
+ .clear{
+   &:before,&:after{
+     content: "";
+     display: block;
+   }
+   &:after{
+     clear: both;
+   }
+ }
+ //div{
+ //  width:@width;
+ //  height:@height;
+ //  border: 1px solid red;
+ //  .radius(20%,20%,20%,20%);
+ //  .shadow(@type:1);
+ //}
+ .one{
+   width: 200px;
+   height:200px;
+   border:2px solid red;
+   border-image-source: url("../border.jpg");
+   border-image-width: 20px;
+   border-image-slice: 33.333%;
+   border-image-repeat: round;
+   border-image-outset: 10px;
+ }
+ span{
+   .radius;
+ }

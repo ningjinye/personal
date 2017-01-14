@@ -1,0 +1,60 @@
+@import "var.less";
+*{
+box-sizing: border-box;
+}
+.container{
+  &{
+    width: @num1*1-@min-width;
+    margin: auto;
+    .clear;
+  }
+  &>.row{
+    width:100%;
+    .clear;
+  }
+  &-fluid>.row{
+    width:100%;
+    .clear;
+  }
+}
+
+/*小屏*/
+.loop();
+/*中屏*/
+@media screen and (min-width: @num1){
+  .container{
+      width: @num1;
+      .clear;
+  }
+  .loop(m);
+}
+/*大屏*/
+@media screen and (min-width: @num2){
+  .container{
+    width: @num2;
+    .clear;
+  }
+  .loop(l);
+}
+/*核心代码*/
+.loop(@type:s,@i:1) when(@i<=@cols){
+   .container>.row>.col-@{type}-@{i}{
+     float: left;
+     width:@i/@cols*100%;
+   }
+  .container-fluid>.row>.col-@{type}-@{i}{
+    float: left;
+    width:@i/@cols*100%;
+  }
+  .loop(@type,@i+1);
+}
+/*清除浮动*/
+.clear{
+  &:before,&:after{
+    content: "";
+    display: block;
+  }
+  &:after{
+    clear: both;
+  }
+}
