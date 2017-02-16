@@ -125,7 +125,7 @@ canvas{
 }
 .me{
     width:100%;
-    margin-bottom: 90px;
+    margin-bottom: 95px;
     overflow: hidden;
 }
 .me-inner{
@@ -139,9 +139,14 @@ canvas{
     color: #ff514c;
     padding-bottom: 35px;
 }
+/*.me-bottom{
+    text-align: center;
+    color: #7B818A;
+    font-size: 20px;
+}*/
 .me-left{
     width: 50%;
-    height: 350px;
+    height: 340px;
     /*background: pink;*/
     float: left;
     padding-right: 25px;
@@ -433,7 +438,7 @@ canvas{
 }
 .ms-wapper button{
     outline: none;
-    background: transparent;
+    /*background: transparent;*/
     font-weight: 700;
     font-size: 16px;
     letter-spacing: 1px;
@@ -444,6 +449,7 @@ canvas{
     top: 70px;
     left: 1em;
     text-transform: uppercase;
+    cursor: pointer;
 }
 .ms-per{
     position: relative;
